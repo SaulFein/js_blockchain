@@ -33,6 +33,8 @@ app.get("/mine", function (req, res) {
     nonce
   );
 
+  bitcoin.createNewTransaction(12.5, "00");
+
   const newBlock = bitcoin.createNewBlock(nonce, previousBlockHash, blockHash);
   res.json({
     note: "New block mined successfully",
